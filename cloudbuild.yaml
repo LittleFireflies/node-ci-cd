@@ -1,5 +1,14 @@
 steps:
-- name: 'gcr.io/cloud-builders/npm'
-  args: ['run', 'test']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/bdd-malang-030819/hello-malang', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['run', 'gcr.io/gcr.io/bdd-malang-030819/hello-malang', 'npm', 'run', 'test']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/bdd-malang-030819/hello-malang']
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['app', 'deploy']
+  args: ['beta', 'run', 'deploy', 'hello-malang', '--image=gcr.io/bdd-malang-030819/hello-malang', '--region', 'asia-northeast1', '--platform=managed', '--allow-unauthenticated']
+# # Google App Engine
+# - name: 'gcr.io/cloud-builders/npm'
+#   args: ['run', 'test']
+# - name: 'gcr.io/cloud-builders/gcloud'
+#   args: ['app', 'deploy']
