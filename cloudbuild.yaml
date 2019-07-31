@@ -2,7 +2,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/bdd-malang-030819/hello-malang', '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['run', 'gcr.io/gcr.io/bdd-malang-030819/hello-malang', 'npm', 'run', 'test']
+  args: ['run', 'gcr.io/bdd-malang-030819/hello-malang', 'npm', 'run', 'test']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/bdd-malang-030819/hello-malang']
 - name: 'gcr.io/cloud-builders/gcloud'
