@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/LittleFireflies/node-ci-cd/issues"
   },
-  "homepage": "https://github.com/LittleFireflies/node-ci-cd#readme"
+  "homepage": "https://github.com/LittleFireflies/node-ci-cd#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
