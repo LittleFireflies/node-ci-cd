@@ -33,4 +33,13 @@ describe('Simple test', () => {
                 done()
             })
     })
+
+    it('GET /error should return 500', (done) => {
+        chai.request(app)
+            .get('/error')
+            .end((err, res) => {
+                res.should.have.status(500)
+                done()
+            })
+    })
 })
