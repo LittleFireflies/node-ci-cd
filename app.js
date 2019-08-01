@@ -1,7 +1,6 @@
 require('@google-cloud/debug-agent').start({ allowExpressions: true })
 const express = require('express')
 const app = express()
-// for testing notif again 
 
 app.get('/', (req, res) => {
     res.send('<h1>Hello World</h1>')
@@ -14,6 +13,7 @@ app.get('/hello', (req, res) => {
 })
 
 app.get('/error', (req, res) => {
+    // const name = "Dicoding"
     res.send(`<h1>Hello ${name}</h1>`)
 })
 
